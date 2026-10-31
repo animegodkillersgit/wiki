@@ -51,6 +51,20 @@
     window.addEventListener('resize', revealVisible);
   }
 
+  // Вкладки новостей: показываем записи выбранного типа.
+  var newsTabs = document.querySelectorAll('.news-tabs button');
+  newsTabs.forEach(function (tab) {
+    tab.addEventListener('click', function () {
+      var shown = 0;
+      newsTabs.forEach(function (other) { other.setAttribute('aria-pressed', String(other === tab)); });
+      document.querySelectorAll('.news-grid .showcase').forEach(function (card) {
+        card.hidden = card.dataset.kind !== tab.dataset.kind;
+        if (!card.hidden) shown += 1;
+      });
+      document.querySelector('.news-empty').hidden = shown !== 0;
+    });
+  });
+
   // Фильтры списка: нажатая кнопка отбирает карточки, повторное нажатие снимает отбор.
   var bar = document.querySelector('.filter-bar');
   if (!bar) return;
