@@ -44,7 +44,8 @@ body::before { content: ""; position: absolute; top: 0; left: 0; right: 0; heigh
 .section-world, .section-progression { --page-art: url(../img/hero.jpg); }
 .section-collection, .section-shop { --page-art: url(../img/card-left.jpg); }
 .section-raids, .section-start { --page-art: url(../img/card-right.jpg); }
-.section-news { --page-art: url(../img/card-gate.jpg); }
+.section-news, .section-404 { --page-art: url(../img/card-gate.jpg); }
+.frame .center { text-align: center; }
 
 h1, h2, h3, h4 { color: #fff; line-height: 1.2; font-family: var(--title); font-weight: 700; }
 a { color: var(--sky); text-decoration: none; }
