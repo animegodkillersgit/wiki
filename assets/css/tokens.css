@@ -1,0 +1,125 @@
+/* ============================================================
+   RE_Aevo — Neon Anime UI · DESIGN TOKENS
+   Reverse-engineered from the 5 reference screenshots.
+   3 tiers: PRIMITIVES (raw) -> SEMANTIC (purpose) -> COMPONENT (context).
+   Rule: components reference SEMANTIC/COMPONENT vars, never raw hex.
+   "When AI sees --panel-border it understands the purpose.
+    When it sees #8A44E6 it has to guess."
+   ============================================================ */
+
+:root {
+
+  /* ---------- TIER 1 · PRIMITIVES (raw values, never used directly in UI) ---------- */
+
+  /* neutrals / base */
+  --c-void:        #0A0610;
+  --c-ink:         #0B0714;
+  --c-grape-900:   #160A28;
+  --c-grape-800:   #1B0F30;
+  --c-grape-700:   #241338;
+  --c-grape-600:   #2A1840;
+  --c-glow-seed:   #25103F;  /* radial backdrop accent */
+
+  /* brand violet / magenta */
+  --c-violet-600:  #6A2FD0;
+  --c-violet-500:  #8A44E6;
+  --c-violet-400:  #9B4BFF;
+  --c-magenta-500: #E24BD8;
+  --c-grad-a:      #7B2FD6;  /* header gradient start */
+  --c-grad-b:      #B14AE0;  /* header gradient end   */
+
+  /* text */
+  --c-white:       #FFFFFF;
+  --c-lav-100:     #F5EEFF;
+  --c-lav-300:     #C6A6F0;
+  --c-lav-400:     #9D86C4;
+  --c-lav-600:     #6E5A92;
+
+  /* action / semantic source hues */
+  --c-green-400:   #37E0A0;
+  --c-green-600:   #16B97E;
+  --c-red-500:     #FF3B4E;
+  --c-red-600:     #E24B4A;
+  --c-cyan-400:    #67E8FF;
+  --c-cyan-500:    #5DD0E6;
+  --c-gold-500:    #FFB020;
+  --c-gold-400:    #FFD24A;
+  --c-track:       #2A1C42;
+
+  /* 7-tier rarity hues */
+  --c-rar-gray:    #9AA0AB;
+  --c-rar-green:   #46C45A;
+  --c-rar-blue:    #3D8BFF;
+  --c-rar-purple:  #9B5CFF;
+  --c-rar-magenta: #E24BD8;
+  --c-rar-gold:    #FFB020;
+  --c-rar-red:     #FF3B4E;
+
+  /* spacing */
+  --s-1: 4px;  --s-2: 8px;  --s-3: 12px;  --s-4: 16px;  --s-5: 20px;  --s-6: 24px;
+
+  /* radius */
+  --r-card: 10px;  --r-panel: 14px;  --r-modal: 16px;  --r-pill: 999px;
+
+  /* glow / depth */
+  --glow-violet: 0 0 24px rgba(123,63,228,.50);
+  --glow-soft:   0 0 14px rgba(123,63,228,.32);
+  --vignette-in: inset 0 0 44px rgba(80,30,160,.18);
+
+
+  /* ---------- TIER 2 · SEMANTIC (purpose-driven — use these in layout) ---------- */
+
+  --bg-app:         var(--c-ink);
+  --bg-glow-seed:   var(--c-glow-seed);
+  --panel-bg:       var(--c-grape-900);
+  --panel-border:   var(--c-violet-500);
+  --panel-glow:     var(--glow-violet);
+  --panel-vignette: var(--vignette-in);
+  --cell-bg:        var(--c-grape-700);
+
+  --header-from:    var(--c-grad-a);
+  --header-to:      var(--c-grad-b);
+
+  --text-primary:   var(--c-white);
+  --text-secondary: var(--c-lav-400);
+  --text-muted:     var(--c-lav-600);
+  --text-on-accent: var(--c-lav-100);
+
+  --accent:         var(--c-violet-500);
+  --success:        var(--c-green-600);
+  --danger:         var(--c-red-500);
+  --info:           var(--c-cyan-500);
+  --warning:        var(--c-gold-500);
+
+  --track-bg:       var(--c-track);
+
+
+  /* ---------- TIER 3 · COMPONENT (context-specific) ---------- */
+
+  /* rarity (every collectible card border + glow) */
+  --rarity-recruit:   var(--c-rar-gray);
+  --rarity-fighter:   var(--c-rar-green);
+  --rarity-veteran:   var(--c-rar-blue);
+  --rarity-champion:  var(--c-rar-purple);
+  --rarity-overlord:  var(--c-rar-magenta);
+  --rarity-sovereign: var(--c-rar-gold);
+  --rarity-godkiller: var(--c-rar-red);
+
+  /* buttons (glowing pills) */
+  --btn-confirm-from: var(--c-green-400);
+  --btn-confirm-to:   var(--c-green-600);
+  --btn-confirm-glow: 0 0 14px rgba(34,200,140,.40);
+  --btn-primary-from: var(--c-violet-400);
+  --btn-primary-to:   var(--c-violet-600);
+  --btn-primary-glow: 0 0 16px rgba(140,70,240,.50);
+  --btn-danger-from:  #FF6B78;
+  --btn-danger-to:    var(--c-red-600);
+
+  /* bars */
+  --pity-track:       var(--track-bg);
+  --xp-track:         var(--track-bg);
+
+  /* borders */
+  --card-border-w:        1.5px;
+  --card-border-w-featured: 2px;
+}
