@@ -150,7 +150,7 @@ tbody tr:hover { background: rgba(200, 168, 96, .1); }
   box-shadow: 1px 1px 4px #000;
   transition: transform .15s, box-shadow .15s;
 }
-.portrait::before { content: ""; position: absolute; top: 14px; right: 16px; width: 52px; height: 52px; background: var(--tier); opacity: .32; transform: rotate(45deg); }
+.portrait::before, .world-card:not(:has(.card-icon))::before { content: ""; position: absolute; top: 14px; right: 16px; width: 52px; height: 52px; background: var(--tier, var(--steel)); opacity: .32; transform: rotate(45deg); }
 .portrait::after, .world-card::after { content: ""; position: absolute; inset: 0; background: linear-gradient(transparent 50%, rgba(0, 0, 0, .73) 75%, #000); }
 .portrait, .world-card { height: 140px; border: 1px solid color-mix(in srgb, var(--tier, var(--steel)) 45%, transparent); }
 .portrait:hover, .world-card:hover { color: #fff; transform: translateY(-5px); border-color: var(--tier, var(--steel)); box-shadow: 0 8px 22px color-mix(in srgb, var(--tier, var(--steel)) 40%, transparent); }
@@ -226,6 +226,7 @@ tbody tr:hover { background: rgba(200, 168, 96, .1); }
 
 /* жетоны */
 .token-icon { width: 30px; height: 30px; margin-right: var(--s-2); vertical-align: middle; }
+.token-soon { display: inline-block; background: rgba(255, 255, 255, .08); outline: 1px solid var(--steel); outline-offset: -1px; transform: scale(.7) rotate(45deg); }
 .token-world { margin-top: var(--s-6); }
 .token-world h3 { margin: 0 0 var(--s-2); font-size: 20px; letter-spacing: 2px; text-transform: uppercase; }
 .token-world h3 small { margin-left: var(--s-2); font-family: "Noto Sans", Arial, sans-serif; font-size: 14px; font-weight: 400; letter-spacing: 1px; text-transform: none; color: var(--dim); }
